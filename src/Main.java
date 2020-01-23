@@ -1,9 +1,32 @@
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 public final class Main {
-
+	
+	String csv_file_name;
 	public static void main(String[] args) {
-		Fountians fountain1 = new Fountians(0, 0, "Fountain", "Wroking", null, null);
-		System.out.println(fountain1.lattitude);
+		try {
+			Creating_Fountains cf = new Creating_Fountains();
+			Handler h = new Handler();
+			
+			h.add_fountains(cf.Create_Fountains("/Resources/Fountains_test.csv"));
+			
+			h.printFountains();
+			
+			h.add_fountains(cf.Create_Fountains("/Resources/AcquaFonte (GIS infor included) - Sheet1.csv"));
+			
+			h.printFountains();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.print("no csv file");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.print("no csv file");
+		}
+		
+		
 
 	}
 

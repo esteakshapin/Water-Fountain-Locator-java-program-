@@ -1,9 +1,9 @@
 import java.util.List;
 
-public class Fountians extends Water_Location{
+public class Fountains extends Water_Location{
 
-	public Fountians(float lat, float log, String type, String status, List<Integer> ratings, List<String> comments) {
-		super(lat, log, type, status, ratings, comments);
+	public Fountains(String n, float lat, float log, String type, String status, List<Integer> ratings, List<String> comments) {
+		super(n, lat, log, type, status, ratings, comments);
 		// TODO Auto-generated constructor stub
 	}
 
