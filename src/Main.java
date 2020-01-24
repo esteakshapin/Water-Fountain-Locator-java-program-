@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Timer;
 
 public final class Main {
 	
@@ -11,11 +12,13 @@ public final class Main {
 			
 			h.add_fountains(cf.Create_Fountains("/Resources/Fountains_test.csv"));
 			
-			h.printFountains();
+//			h.printFountains();
 			
 			h.add_fountains(cf.Create_Fountains("/Resources/AcquaFonte (GIS infor included) - Sheet1.csv"));
 			
-			h.printFountains();
+//			h.printFountains();
+			
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

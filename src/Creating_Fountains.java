@@ -28,7 +28,7 @@ public class Creating_Fountains {
 		}
 		csvReader.close();
 		
-		
+		int d = 1;
 		for (String [] row1 : rows) {
 			List <String> comments = new ArrayList<String>();
 			List <Integer> ratings = new ArrayList<Integer>();
@@ -57,11 +57,14 @@ public class Creating_Fountains {
 				
 				row1[4] = "0";
 				ratings.add(Integer.parseInt(row1[4]));
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 			
 			list_of_fountains.add(new Fountains(row1[0], Float.parseFloat(row1[1]), Float.parseFloat(row1[2]), row1[3], row1[6], ratings , comments));
+			System.out.print("\rFountian Object Creation " + "[" + d + "/" + rows.size() + "]");
+			d++;
 		}
+		System.out.println("\nDONE");
 		
 		return list_of_fountains;
 	}
