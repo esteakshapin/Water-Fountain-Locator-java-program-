@@ -18,6 +18,8 @@ public final class Main {
 			
 //			h.printFountains();
 			
+			System.out.print(h.getFountain(1).name);
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
