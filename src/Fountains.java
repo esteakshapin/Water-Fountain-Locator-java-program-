@@ -7,15 +7,7 @@ public class Fountains extends Water_Location{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void displayComment() {
-		if (comments.size() != 0) {
-			for (String com : comments) {
-				System.out.println(com + "/n");
-			}
-		}
-		
-	}
+
 	public void display_type() {
 		System.out.println(type);
 		
@@ -23,6 +15,13 @@ public class Fountains extends Water_Location{
 	public void display_status() {
 		System.out.println(status);
 		
+	}
+
+
+	@Override
+	public void addDist(double dist) {
+		// TODO Auto-generated method stub
+		super.dist = dist;
 	}
 
 }

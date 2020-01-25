@@ -5,6 +5,7 @@ public abstract class Water_Location {
 	protected String name, type, status;
 	protected List<Integer> ratings;
 	protected List<String> comments;
+	protected double dist;
 
 	public Water_Location(String n, float lat, float log, String type, String status, List<Integer> ratings, List<String> comments) {
 		this.name = n;
@@ -16,5 +17,5 @@ public abstract class Water_Location {
 		this.comments = comments; 
 	}
 	
-	public abstract void displayComment();
+	public abstract void addDist(double dist);
 }

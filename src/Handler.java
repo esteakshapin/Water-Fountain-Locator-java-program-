@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Handler {
@@ -22,9 +23,9 @@ public class Handler {
 			System.out.println("Fountain: " + i.name +" "+ i.lattitude + " "+  i.longitutude + " "+ i.type + " " + i.ratings + " " + i.comments );
 		}
 	}
-	public void getFountainsInRange(double lat, double longi, float range) {
+	public List<Fountains> getFountainsInRange(double lat, double longi, float range) {
 		
-		double [] distance = new double [List_fountains.size()];
+		List<Fountains> list_of_fountians_in_range = new ArrayList<Fountains>();
 		
 		double lat2 = lat;
 		double lon2 = longi;
@@ -48,9 +49,27 @@ public class Handler {
 
 		    double dist = earthRadius * c;
 
-		    distance[i] = dist;
+		    if (dist <= range) {
+		    	List_fountains.get(i).addDist(dist);
+		    	int d = 0;
+		    	
+		    	if (list_of_fountians_in_range.size() != 0) {
+		    		while (d < list_of_fountians_in_range.size() && dist > list_of_fountians_in_range.get(d).dist) {
+			    		d++;
+			    	}
+		    		
+			    	list_of_fountians_in_range.add(d, List_fountains.get(i));
+			    	
+		    	}else{
+		    		
+		    		list_of_fountians_in_range.add(List_fountains.get(i));
+		    	}
+		    	
+		    }
 		}
 		
+		return list_of_fountians_in_range;
+
 		
 		
 	}

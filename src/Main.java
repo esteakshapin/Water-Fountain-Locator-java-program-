@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 
 public final class Main {
@@ -14,7 +16,7 @@ public final class Main {
 			
 //			h.printFountains();
 			
-//			h.add_fountains(cf.Create_Fountains("/Resources/AcquaFonte (GIS infor included) - Sheet1.csv"));
+			h.add_fountains(cf.Create_Fountains("/Resources/AcquaFonte (GIS infor included) - Sheet1.csv"));
 			
 //			h.printFountains();
 			
@@ -22,8 +24,16 @@ public final class Main {
 			
 			//40.717892 -74.013908 stuy
 			
-			h.getFountainsInRange(40.717892, -74.013908, 2);
+			double lat = 40.717892;
+			double longi = -74.013908;
+			float radius = 1;
 			
+			List<Fountains> fountains_in_range = h.getFountainsInRange(lat, longi, radius); 
+			
+			System.out.println("Water fountains within " + radius + " miles of your current location:");
+			for (Fountains f : fountains_in_range) {
+				System.out.println(f.name + "  [Distance:] "+ f.dist + "\n [Type:] " + f.type + " [Status:] " + f.status);
+			}
 			
 			
 		} catch (IOException e) {
