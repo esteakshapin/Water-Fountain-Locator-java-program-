@@ -14,11 +14,16 @@ public final class Main {
 			
 //			h.printFountains();
 			
-			h.add_fountains(cf.Create_Fountains("/Resources/AcquaFonte (GIS infor included) - Sheet1.csv"));
+//			h.add_fountains(cf.Create_Fountains("/Resources/AcquaFonte (GIS infor included) - Sheet1.csv"));
 			
 //			h.printFountains();
 			
-			System.out.print(h.getFountain(1).name);
+			// 40.71963	-73.97751 closest to stuy
+			
+			//40.717892 -74.013908 stuy
+			
+			h.getFountainsInRange(40.717892, -74.013908, 2);
+			
 			
 			
 		} catch (IOException e) {
