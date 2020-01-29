@@ -32,7 +32,7 @@ public final class Main {
 			
 			System.out.println("Water fountains within " + radius + " miles of your current location:");
 			for (Fountains f : fountains_in_range) {
-				System.out.println(f.name + "  [Distance:] "+ f.dist + "\n [Type:] " + f.type + " [Status:] " + f.status);
+				System.out.println(f.getName() + "  [Distance:] "+ f.getDist() + "\n [Type:] " + f.getType() + " [Status:] " + f.getStatus());
 			}
 			
 			
